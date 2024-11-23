@@ -47,7 +47,7 @@ def main():
     # Create all the levels
     level_list = []
     level_list.append(levels.Level_01(player))
-    level_list.append(levels.Level_02(player))
+    level_list.append("end")
 
     # Set the current level
     current_level_no = 0
@@ -112,6 +112,9 @@ def main():
                 current_level_no += 1
                 current_level = level_list[current_level_no]
                 player.level = current_level
+        if current_level == "end":
+            break
+
 
         # ALL CODE TO DRAW SHOULD GO BELOW THIS COMMENT
         current_level.draw(screen)
